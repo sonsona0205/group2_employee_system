@@ -1,0 +1,31 @@
+========================================================================
+Contributions
+========================================================================
+
+PROJECT NAME: Employee Records Management System
+
+------------------------------------------------------------------------
+TEAM MEMBER: Genekka Sonsona
+------------------------------------------------------------------------
+* Repository Setup: Initialized the GitHub repository and managed collaborator access.
+* Database Initialization: Created the baseline 'database.sql' structure containing the table schema.
+* Configuration: Set up the initial 'db.php' connection file.
+
+------------------------------------------------------------------------
+TEAM MEMBER: Jasper Briñas
+------------------------------------------------------------------------
+* System Architecture & CRUD Operations:
+  - Built 'index.php' to handle real-time fetching, formatting, and rendering of database records.
+  - Developed 'add.php' incorporating secure data insertion via MySQLi prepared statements.
+  - Implemented 'edit.php' featuring parameterized GET requests, pre-filled forms, and UPDATE queries.
+  - Created 'delete.php' to safely remove user records via hidden POST parameters.
+
+* Data Validation & Security:
+  - Integrated server-side validations using 'filter_var' for safe email formatting.
+  - Enforced string trimming and mandatory field compliance to protect against empty SQL submissions.
+  - Applied 'htmlspecialchars' systematically across all UI components to prevent XSS (Cross-Site Scripting).
+
+* Creative Direction & Special Fire Force Theme Redesign:
+  - Conceptualized and executed a comprehensive custom aesthetic shift to a "Special Fire Force" theme.
+  - Wrote a custom, standalone 'style.css' stylesheet establishing unique brand color tokens (brigade blues and orange accents).
+  - Integrated graphical assets and restructured form placeholder examples to align natively with the brigade theme.
