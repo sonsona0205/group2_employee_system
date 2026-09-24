@@ -1,0 +1,167 @@
+body {
+  background-color: #10151e;
+  color: #eef3fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Blue stripes inspired by the brigade uniforms */
+.brigade-header {
+  background-color: #191f2b;
+  border-top: 8px solid #35baff;
+  border-bottom: 8px solid #35baff;
+  padding: 28px 0;
+}
+
+.company-badge {
+  display: inline-block;
+  background-color: #ff781f;
+  color: #10151e;
+  padding: 6px 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.brigade-header h1 {
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.brigade-header p {
+  color: #b8c5d8;
+  margin-bottom: 0;
+}
+
+.content-panel {
+  background-color: #1b2331;
+  border: 1px solid #39485f;
+  border-top: 4px solid #ff781f;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.section-title {
+  color: #55c6ff;
+  font-weight: bold;
+}
+
+.section-note {
+  color: #b8c5d8;
+}
+
+.btn-fire {
+  background-color: #ff781f;
+  border: 1px solid #ff781f;
+  color: #10151e;
+  font-weight: bold;
+}
+
+.btn-fire:hover {
+  background-color: #ff963f;
+  border-color: #ff963f;
+  color: #10151e;
+}
+
+.btn-blue {
+  background-color: #35baff;
+  border: 1px solid #35baff;
+  color: #10151e;
+  font-weight: bold;
+}
+
+.btn-blue:hover {
+  background-color: #81d5ff;
+  border-color: #81d5ff;
+  color: #10151e;
+}
+
+.btn-back {
+  border: 1px solid #9aaec8;
+  color: #eef3fa;
+}
+
+.btn-back:hover {
+  background-color: #35445a;
+  border-color: #b8c5d8;
+  color: white;
+}
+
+.employee-table {
+  --bs-table-bg: #1b2331;
+  --bs-table-color: #eef3fa;
+  --bs-table-striped-bg: #222e40;
+  --bs-table-striped-color: #eef3fa;
+  --bs-table-border-color: #39485f;
+}
+
+.employee-table thead th {
+  background-color: #35baff;
+  color: #10151e;
+  padding: 14px;
+}
+
+.employee-table td {
+  padding: 14px;
+}
+
+.role-badge {
+  display: inline-block;
+  background-color: #111923;
+  color: #ffad66;
+  border: 1px solid #ff781f;
+  border-radius: 4px;
+  padding: 4px 10px;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.form-label {
+  color: #eef3fa;
+  font-weight: bold;
+}
+
+.form-control {
+  background-color: #101722;
+  border: 1px solid #61738d;
+  color: white;
+  padding: 10px;
+}
+
+.form-control:focus {
+  background-color: #101722;
+  color: white;
+  border-color: #35baff;
+  box-shadow: 0 0 0 3px rgba(53, 186, 255, 0.2);
+}
+
+.form-control::placeholder {
+  color: #a5b3c6;
+}
+
+.form-text {
+  color: #b8c5d8;
+}
+
+.alert-danger {
+  background-color: #43232a;
+  color: #ffd9de;
+  border-color: #cf6679;
+}
+
+.page-footer {
+  color: #a5b3c6;
+  text-align: center;
+  font-size: 14px;
+  padding: 24px;
+}
+.header-logo {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border: 2px solid #ff781f;
+  border-radius: 8px;
+}

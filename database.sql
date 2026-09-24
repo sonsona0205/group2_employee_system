@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS group2_employee_system;
+CREATE DATABASE IF NOT EXISTS employee_system;
 
-USE group2_employee_system;
+USE employee_system;
 
 CREATE TABLE employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
