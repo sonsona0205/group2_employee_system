@@ -1,6 +1,8 @@
 <?php
 require "db.php";
-
+// $id = (int) ($_GET["id"] ?? 0); stores the value of the "id" parameter from the URL query string into the variable $id. If the "id" parameter is not present in the URL, it defaults to 0. The (int) cast ensures that the value is treated as an integer.
+// if 0, it means that the user is adding a new employee, and if it's a positive integer, it means that the user is editing an existing employee's details.
+// The double question mark operator (??) is a null coalescing operator in PHP that returns the value on its left if it exists and is not null; otherwise, it returns the value on its right.
 $message = "";
 $id = (int) ($_GET["id"] ?? 0);
 
@@ -61,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        <?= isset($id) ? "Edit Personnel" : "Add Personnel" ?> | Special Fire Force
+        Edit Personnel | Special Fire Force
     </title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -93,11 +95,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-lg-8">
                 <div class="content-panel">
                     <h2 class="section-title">
-                        <?= isset($id) ? "Edit Personnel" : "Add Personnel" ?>
+                        Edit Personnel
                     </h2>
 
                     <p class="section-note">
-                        Enter the employee's brigade details.
+                        Update the employee's brigade details.
                         All fields are required.
                     </p>
 
@@ -174,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <button type="submit" class="btn btn-fire">
-                            <?= isset($id) ? "Update Personnel" : "Save Personnel" ?>
+                            Update Personnel
                         </button>
 
                         <a href="index.php" class="btn btn-back">

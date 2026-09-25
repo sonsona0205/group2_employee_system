@@ -1,6 +1,6 @@
 <?php
 require "db.php";
-
+// Fetch all employees from the database into an associative array called $result, ordered by their ID in ascending order.
 $result = mysqli_query($conn, "SELECT * FROM employees ORDER BY id ASC");
 ?>
 
@@ -20,7 +20,9 @@ $result = mysqli_query($conn, "SELECT * FROM employees ORDER BY id ASC");
 <body>
     <header class="brigade-header">
         <div class="container">
+            <!-- g-4 means "gutters" with a spacing of 4 units between the columns in the Bootstrap grid system. It is used to create consistent spacing between elements in a row. -->
             <div class="row align-items-center g-4">
+                <!-- This is a column that takes up 7 out of 12 columns on medium screens and larger -->
                 <div class="col-md-7">
                     <span class="company-badge">PERSONNEL REGISTRY</span>
                     <h1>SPECIAL FIRE FORCE</h1>
@@ -35,9 +37,13 @@ $result = mysqli_query($conn, "SELECT * FROM employees ORDER BY id ASC");
             </div>
         </div>
     </header>
-
+    <!-- my-4 means "margin-top and margin-bottom" with a spacing of 4 units. It is used to create consistent spacing around the main content area. -->
     <main class="container my-4">
         <div class="content-panel">
+            <!-- d-flex means "display flex", flex-wrap means the elements will wrap to the next line if they don't fit, 
+            justify-content-between means the elements will be spaced out evenly with the first element at the start and the last element at the end,
+            align-items-center means the elements will be aligned in the center vertically,
+            gap-3 means there will be a gap of 3 units between the elements. -->
             <div class="d-flex flex-wrap justify-content-between
                         align-items-center gap-3 mb-4">
                 <div>
@@ -67,12 +73,18 @@ $result = mysqli_query($conn, "SELECT * FROM employees ORDER BY id ASC");
                     </thead>
 
                     <tbody>
+                        <!-- The conditional logic to display employee data -->
+                        <!-- If there are employees in the result set, display them -->
+                        <!-- basically, it fetches each row as an associative array and assigns it to $employee -->
+                        <!-- so we created $employee to hold the data for each employee
+                             so we can access the data for each employee using the $employee variable -->
                         <?php if (mysqli_num_rows($result) > 0): ?>
                             <?php while ($employee = mysqli_fetch_assoc($result)): ?>
                                 <tr>
                                     <td><?= $employee["id"] ?></td>
 
                                     <td>
+                                        <!-- htmlspecialchars() is used to convert special characters to HTML entities -->
                                         <?= htmlspecialchars($employee["full_name"]) ?>
                                     </td>
 
@@ -91,11 +103,17 @@ $result = mysqli_query($conn, "SELECT * FROM employees ORDER BY id ASC");
                                     </td>
 
                                     <td class="actions">
+                                        <!-- ?id=<?= $employee["id"] ?> because we want to pass the employee's ID to the edit page -->
+                                        <!-- so we can edit the correct employee -->
                                         <a href="edit.php?id=<?= $employee["id"] ?>"
                                             class="btn btn-blue btn-sm">
                                             Edit
                                         </a>
 
+                                        <!-- The form is used to delete an employee -->
+                                        <!-- The hidden input field is used to pass the employee's ID to the delete page -->
+                                        <!-- so we can delete the correct employee -->
+                                        <!-- class="d-inline" makes the form display inline -->
                                         <form action="delete.php" method="POST"
                                             class="d-inline">
                                             <input type="hidden" name="id"
@@ -111,6 +129,8 @@ $result = mysqli_query($conn, "SELECT * FROM employees ORDER BY id ASC");
                             <?php endwhile; ?>
                         <?php else: ?>
                             <tr>
+                                <!-- colspan="6" means the cell spans 6 columns -->
+                                <!-- py-4 means padding on the top and bottom -->
                                 <td colspan="6" class="text-center py-4">
                                     No personnel registered.
                                     Click Add Personnel to begin.
